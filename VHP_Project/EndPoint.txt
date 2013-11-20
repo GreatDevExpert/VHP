@@ -1,0 +1,90 @@
+End Point Examples
+
+
+==========User Login==========
+
+Send POST Request to http://dev.vhpstudentedition.org/wp-login.php
+Form data
+log --> user login
+pwd --> user password
+client_id --> z2lOHBSMt7KBsVJrLyTagsh6R2THnl
+redirect_to --> /oauth/authorize/?response_type=code&client_id=z2lOHBSMt7KBsVJrLyTagsh6R2THnl&redirect_uri=http://dev.vhpstudentedition.org/tkn/tkn.php
+response_type --> code
+testcookie --> 1
+wp-submit --> Log In
+rememberme --> forever
+
+In response, After successful login user will receive json "result","data","token"
+
+
+
+==========User Logout==========
+
+http://dev.vhpstudentedition.org/wp-json/wp/v2/userlogout/?access_token=h93eig1dtnkjq4ha8jmjqwywrl3w5adrsn5gvjjo
+
+
+==========User Info==========
+
+http://dev.vhpstudentedition.org/wp-json/wp/v2/userInfo/?access_token=h93eig1dtnkjq4ha8jmjqwywrl3w5adrsn5gvjjo
+
+
+==========New Signup==========
+
+POST the info below to http://dev.vhpstudentedition.org/wp-json/wp/v2/signup/
+uname --> someusername
+uemail  --> anyemail@gmail.com
+ucell_no  --> 787899889787
+upwd  --> 12345
+uretype_pwd --> 12345
+
+return user ID
+
+==========Get My Interviews==========
+http://dev.vhpstudentedition.org/wp-json/wp/v2/interviews-my/?access_token=pl363f3k0iw5dxpto7yoptup9cj1g2op6prwu19j
+
+
+==========Create New Interview==========
+http://dev.vhpstudentedition.org/wp-json/wp/v2/interviews-create/?access_token=b98ecbgmxymkev9vsno0lo1skozyjaoua9brltyv
+POST Info
+VARIABLE NAME                  TYPE                     EXAMPLE
+time_length                    Text                     20
+first_name                     Text                     John
+last_name                      Text                     Doe
+born                           Text                     10/10/1970
+rank                           Text                     Maj
+served_in                      Text                     Army
+thumbnail                      File                     Any Image File
+cover_letter                   File                     Any File
+biographical_data_form         File                     Any File
+veterans_release_form          File                     Any File
+interviewers_release_form      File                     Any File
+vetname                        Text                     Maj.John Doe
+category                       Text                     [47,48,49,25,6]
+branchofservice                Text                     [105,106,107]
+conflictorera                  Text                     [96,97]
+photo                          File                     Image File
+additional_photos              File                     Image File
+memoir                         File                     Any File
+war_documents                  File                     Any File
+video_url                      File                     Any Video File .mov, mp4
+
+
+==========Delete Interview==========
+http://dev.vhpstudentedition.org/wp-json/wp/v2/interviews-delete/3523?access_token=b98ecbgmxymkev9vsno0lo1skozyjaoua9brltyv
+
+Interviews 3523 will be deleted if it is owned by user to whome token b98ecbgmxymkev9vsno0lo1skozyjaoua9brltyv is assigned.
+
+
+==========Get Questions of current user==========
+http://dev.vhpstudentedition.org/wp-json/wp/v2/question-get/?access_token=b98ecbgmxymkev9vsno0lo1skozyjaoua9brltyv
+
+
+==========Add Questions==========
+http://dev.vhpstudentedition.org/wp-json/wp/v2/question-add/?access_token=b98ecbgmxymkev9vsno0lo1skozyjaoua9brltyv
+
+POST question_txt
+
+
+
+
+
